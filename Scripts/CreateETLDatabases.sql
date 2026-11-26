@@ -12,6 +12,21 @@ IF DB_ID(N'BikeStoresStage') IS NULL
 
 
 GO
+-- Creación de esquemas de Staging
+USE BikeStoresStage;
+
+
+GO
+IF SCHEMA_ID(N'production') IS NULL
+    EXECUTE ('CREATE SCHEMA production AUTHORIZATION dbo;');
+
+
+GO
+IF SCHEMA_ID(N'sales') IS NULL
+    EXECUTE ('CREATE SCHEMA sales AUTHORIZATION dbo;');
+
+
+GO
 -- ======================================================================================
 -- DATA WAREHOUSE
 -- ======================================================================================
