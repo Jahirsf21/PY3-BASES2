@@ -1,11 +1,8 @@
+-- ======================================================================================
+-- BASE DE DATOS FUENTE: BikeStores
+-- ======================================================================================
 /*
---------------------------------------------------------------------
-© 2017 sqlservertutorial.net All Rights Reserved
---------------------------------------------------------------------
-Name   : BikeStores
-Link   : http://www.sqlservertutorial.net/load-sample-database/
-Version: 1.0
---------------------------------------------------------------------
+    Crea la base de datos BikeStores, solo se crea si no existe.
 */
 IF DB_ID(N'BikeStores') IS NULL
     BEGIN
@@ -18,7 +15,7 @@ USE BikeStores;
 
 
 GO
--- create schemas
+-- Esquemas: production (catálogo e inventario) y sales (ventas)
 IF SCHEMA_ID(N'production') IS NULL
     EXECUTE ('CREATE SCHEMA production AUTHORIZATION dbo;');
 
@@ -29,7 +26,14 @@ IF SCHEMA_ID(N'sales') IS NULL
 
 
 GO
--- create tables
+-- ======================================================================================
+-- TABLAS
+-- ======================================================================================
+/*
+    Las tablas se crean en orden de dependencia para que las llaves foráneas
+    siempre referencien tablas ya existentes.
+*/
+-- Categorías de productos 
 IF OBJECT_ID(N'production.categories', N'U') IS NULL
     BEGIN
         CREATE TABLE production.categories (
@@ -40,6 +44,7 @@ IF OBJECT_ID(N'production.categories', N'U') IS NULL
 
 
 GO
+-- Marcas de los productos
 IF OBJECT_ID(N'production.brands', N'U') IS NULL
     BEGIN
         CREATE TABLE production.brands (
@@ -50,6 +55,7 @@ IF OBJECT_ID(N'production.brands', N'U') IS NULL
 
 
 GO
+-- Productos: 
 IF OBJECT_ID(N'production.products', N'U') IS NULL
     BEGIN
         CREATE TABLE production.products (
@@ -66,6 +72,7 @@ IF OBJECT_ID(N'production.products', N'U') IS NULL
 
 
 GO
+-- Clientes:
 IF OBJECT_ID(N'sales.customers', N'U') IS NULL
     BEGIN
         CREATE TABLE sales.customers (
@@ -83,6 +90,7 @@ IF OBJECT_ID(N'sales.customers', N'U') IS NULL
 
 
 GO
+-- Tiendas físicas
 IF OBJECT_ID(N'sales.stores', N'U') IS NULL
     BEGIN
         CREATE TABLE sales.stores (
@@ -99,6 +107,7 @@ IF OBJECT_ID(N'sales.stores', N'U') IS NULL
 
 
 GO
+-- Empleados: 
 IF OBJECT_ID(N'sales.staffs', N'U') IS NULL
     BEGIN
         CREATE TABLE sales.staffs (
@@ -117,6 +126,7 @@ IF OBJECT_ID(N'sales.staffs', N'U') IS NULL
 
 
 GO
+-- Encabezado de las órdenes de venta
 IF OBJECT_ID(N'sales.orders', N'U') IS NULL
     BEGIN
         CREATE TABLE sales.orders (
@@ -137,6 +147,7 @@ IF OBJECT_ID(N'sales.orders', N'U') IS NULL
 
 
 GO
+-- Detalle de las órdenes
 IF OBJECT_ID(N'sales.order_items', N'U') IS NULL
     BEGIN
         CREATE TABLE sales.order_items (
@@ -154,6 +165,7 @@ IF OBJECT_ID(N'sales.order_items', N'U') IS NULL
 
 
 GO
+-- Inventario: cantidad disponible de cada producto por tienda
 IF OBJECT_ID(N'production.stocks', N'U') IS NULL
     BEGIN
         CREATE TABLE production.stocks (

@@ -1,16 +1,15 @@
+-- ======================================================================================
+-- CARGA DE DATOS: BikeStores
+-- ======================================================================================
 /*
---------------------------------------------------------------------
-© 2017 sqlservertutorial.net All Rights Reserved
---------------------------------------------------------------------
-Name   : BikeStores
-Link   : http://www.sqlservertutorial.net/load-sample-database/
-Version: 1.0
---------------------------------------------------------------------
+    Inserta los datos de ejemplo en la base BikeStores. Debe ejecutarse después de
+    CreateBSDatabase.sql.
 */
 USE BikeStores;
 
 
 GO
+-- Marcas (production.brands)
 SET IDENTITY_INSERT production.brands ON;
 
 INSERT  INTO production.brands (
@@ -69,6 +68,7 @@ VALUES                         (9, 'Trek');
 
 SET IDENTITY_INSERT production.brands OFF;
 
+-- Categorías (production.categories)
 SET IDENTITY_INSERT production.categories ON;
 
 INSERT  INTO production.categories (
@@ -115,6 +115,7 @@ VALUES                             (7, 'Road Bikes');
 
 SET IDENTITY_INSERT production.categories OFF;
 
+-- Productos (production.products)
 SET IDENTITY_INSERT production.products ON;
 
 INSERT  INTO production.products (
@@ -3329,6 +3330,7 @@ VALUES                           (321, 'Trek Checkpoint ALR Frameset - 2019', 9,
 
 SET IDENTITY_INSERT production.products OFF;
 
+-- Clientes: el ID lo genera la columna IDENTITY
 -- sales.customers table
 INSERT  INTO sales.customers (
     first_name,
@@ -20670,6 +20672,7 @@ INSERT  INTO sales.customers (
 )
 VALUES                       ('Ester', 'Acevedo', NULL, 'ester.acevedo@gmail.com', '671 Miles Court ', 'San Lorenzo', 'CA', 94580);
 
+-- Tiendas: el ID lo genera la columna IDENTITY
 -- stores
 INSERT  INTO sales.stores (
     store_name,
@@ -20684,6 +20687,7 @@ VALUES                    ('Santa Cruz Bikes', '(831) 476-4321', 'santacruz@bike
                           ('Baldwin Bikes', '(516) 379-8888', 'baldwin@bikes.shop', '4200 Chestnut Lane', 'Baldwin', 'NY', 11432),
                           ('Rowlett Bikes', '(972) 530-5555', 'rowlett@bikes.shop', '8000 Fairway Avenue', 'Rowlett', 'TX', 75088);
 
+-- Inventario por tienda y producto
 -- production.stocks 
 INSERT  INTO production.stocks (
     store_id,
@@ -27258,6 +27262,7 @@ INSERT  INTO production.stocks (
 )
 VALUES                         (3, 313, 0);
 
+-- Empleados (sales.staffs)
 SET IDENTITY_INSERT sales.staffs ON;
 
 INSERT  INTO sales.staffs (
@@ -27382,6 +27387,7 @@ VALUES                    (10, 'Bernardine', 'Houston', 'bernardine.houston@bike
 
 SET IDENTITY_INSERT sales.staffs OFF;
 
+-- Órdenes de venta (sales.orders)
 SET IDENTITY_INSERT sales.orders ON;
 
 INSERT  INTO sales.orders (
@@ -46766,6 +46772,7 @@ VALUES                    (1615, 136, 3, '20181228', '20181228', NULL, 3, 8);
 
 SET IDENTITY_INSERT sales.orders OFF;
 
+-- Detalle de las órdenes (sales.order_items)
 INSERT  INTO sales.order_items (
     order_id,
     item_id,

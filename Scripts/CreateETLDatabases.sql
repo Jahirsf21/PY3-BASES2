@@ -17,11 +17,13 @@ USE BikeStoresStage;
 
 
 GO
+-- Esquema production: tablas de catálogo e inventario.
 IF SCHEMA_ID(N'production') IS NULL
     EXECUTE ('CREATE SCHEMA production AUTHORIZATION dbo;');
 
 
 GO
+-- Esquema sales: tablas de ventas.
 IF SCHEMA_ID(N'sales') IS NULL
     EXECUTE ('CREATE SCHEMA sales AUTHORIZATION dbo;');
 
@@ -31,8 +33,8 @@ GO
 -- DATA WAREHOUSE
 -- ======================================================================================
 /*
-    Crea la base de datos del data warehouse (modelo dimensional).
-    Solo se crea si no existe. Las tablas las crea el paquete SSIS al ejecutarse.
+    Crea la base de datos del data warehouse
+    Solo se crea si no existe.
 */
 IF DB_ID(N'BikeStoresDW') IS NULL
     BEGIN
