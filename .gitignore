@@ -1,0 +1,15 @@
+
+.vs/
+*.user
+*.suo
+*.dtproj.user
+bin/
+obj/
+*.ispac
+*.tmp
+*.bak
+*.dtsx.bak
+~$*
+Thumbs.db
+desktop.ini
+.DS_Store
