@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{C63C8A00-97B9-4427-A071-363DD58D56E5}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{D900BD4D-B0B8-4B59-9839-E3176EFEAE19}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -193,6 +193,23 @@
       DTS:ObjectName="Load">
       <DTS:Variables />
       <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load\F Inventory"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{0179DA1B-11A9-416D-8222-093B1EC3C642}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="F Inventory"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Fact Inventory.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load\F Orders"
           DTS:CreationName="Microsoft.ExecutePackageTask"
@@ -387,6 +404,10 @@
           Size="119,42"
           Id="Package\Load\F Orders"
           TopLeft="175,28.75" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Load\F Inventory"
+          TopLeft="327.833333333333,29.5833333333335" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -461,14 +482,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,91.7500000000001"
+              EndConnector="0,91.75"
               Start="0,0"
-              End="0,84.2500000000001">
+              End="0,84.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,84.2500000000001" />
+                    End="0,84.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
