@@ -2,7 +2,7 @@
 -- POBLADO DE LA DIMENSIÓN DE FECHAS: BikeStoresDW.dbo.DimDate
 -- ======================================================================================
 /*
-    Genera una fila por día de 2016 a 2018.
+    Genera una fila por día desde 2016 hasta el fin del próximo año.
 */
 USE [BikeStoresDW];
 
@@ -12,7 +12,7 @@ SET NOCOUNT ON;
 
 DECLARE @StartDate AS DATE = '2016-01-01';
 
-DECLARE @EndDate AS DATE = '2019-01-01';
+DECLARE @EndDate AS DATE = DATEFROMPARTS(YEAR(GETDATE()) + 2, 1, 1);
 
 DECLARE @CurrentDate AS DATE = @StartDate;
 

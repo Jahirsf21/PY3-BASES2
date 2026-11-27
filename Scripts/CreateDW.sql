@@ -128,7 +128,7 @@ IF OBJECT_ID(N'[dbo].[DimDate]', N'U') IS NULL
 
 
 GO
--- Tabla de hechos de órdenes (una fila por item de cada orden)
+-- Tabla de hechos de órdenes
 IF OBJECT_ID(N'[dbo].[FactOrders]', N'U') IS NULL
     BEGIN
         CREATE TABLE [dbo].[FactOrders] (
@@ -157,3 +157,25 @@ IF OBJECT_ID(N'[dbo].[FactOrders]', N'U') IS NULL
             CONSTRAINT FK_FactOrders_ShippedDate FOREIGN KEY (shipped_date_key) REFERENCES [dbo].[DimDate] (date_key)
         );
     END
+
+
+GO
+-- Tabla de hechos de inventarios
+IF OBJECT_ID(N'[dbo].[FactInventory]', N'U') IS NULL
+    BEGIN
+        CREATE TABLE [dbo].[FactInventory] (
+            [inventory_key]     INT IDENTITY (1, 1) NOT NULL,
+            [product_key]       INT NOT NULL,
+            [store_key]         INT NOT NULL,
+            [snapshot_date_key] INT NOT NULL,
+            [quantity]          INT NULL,
+            CONSTRAINT PK_FactInventory PRIMARY KEY (inventory_key),
+            CONSTRAINT UQ_FactInventory UNIQUE (product_key, store_key, snapshot_date_key),
+            CONSTRAINT FK_FactInventory_DimProducts FOREIGN KEY (product_key) REFERENCES [dbo].[DimProducts] (product_key),
+            CONSTRAINT FK_FactInventory_DimStores FOREIGN KEY (store_key) REFERENCES [dbo].[DimStores] (store_key),
+            CONSTRAINT FK_FactInventory_SnapshotDate FOREIGN KEY (snapshot_date_key) REFERENCES [dbo].[DimDate] (date_key)
+        );
+    END
+
+
+GO
