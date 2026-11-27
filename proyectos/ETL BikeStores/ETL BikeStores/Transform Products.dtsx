@@ -12,8 +12,8 @@
   DTS:ObjectName="Transform Products"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{3908AD5A-F282-4CB1-8707-04312464FB93}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{219055C3-19C0-4B6D-8E5E-918B6857E198}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -33,47 +33,47 @@
           version="1">
           <components>
             <component
-              refId="Package\Tarea Flujo de datos\Columna derivada"
+              refId="Package\Tarea Flujo de datos\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
-              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
-              name="Columna derivada"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]"
-                  description="Entrada en la transformación Columna derivada"
-                  name="Entrada de columna derivada">
+                  refId="Package\Tarea Flujo de datos\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada]"
-                  description="Salida predeterminada de la transformación Columna derivada"
+                  refId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
-                  name="Salida de columna derivada"
-                  synchronousInputId="Package\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]">
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[end_date]"
+                      refId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Output].Columns[end_date]"
                       dataType="dbTimeStamp"
                       description="end_date"
-                      errorOrTruncationOperation="Cálculo"
+                      errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[end_date]"
+                      lineageId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Output].Columns[end_date]"
                       name="end_date"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
-                          description="Expresión de columna derivada"
+                          description="Derived Column Expression"
                           name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
                         <property
                           containsID="true"
                           dataType="System.String"
-                          description="Expresión descriptiva de columna derivada"
+                          description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
                       </properties>
@@ -82,23 +82,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada]"
-                  description="Salida de error de la transformación Columna derivada"
+                  refId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="Salida de error de columna derivada"
-                  synchronousInputId="Package\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]">
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      refId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      lineageId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      refId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      lineageId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -107,47 +107,47 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarea Flujo de datos\Columna derivada 1"
+              refId="Package\Tarea Flujo de datos\Derived Column 1"
               componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
-              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
-              name="Columna derivada 1"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Tarea Flujo de datos\Columna derivada 1.Inputs[Entrada de columna derivada]"
-                  description="Entrada en la transformación Columna derivada"
-                  name="Entrada de columna derivada">
+                  refId="Package\Tarea Flujo de datos\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de columna derivada]"
-                  description="Salida predeterminada de la transformación Columna derivada"
+                  refId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
-                  name="Salida de columna derivada"
-                  synchronousInputId="Package\Tarea Flujo de datos\Columna derivada 1.Inputs[Entrada de columna derivada]">
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Derived Column 1.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de columna derivada].Columns[start_date]"
+                      refId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Output].Columns[start_date]"
                       dataType="dbTimeStamp"
                       description="start_date"
-                      errorOrTruncationOperation="Cálculo"
+                      errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de columna derivada].Columns[start_date]"
+                      lineageId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Output].Columns[start_date]"
                       name="start_date"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
-                          description="Expresión de columna derivada"
+                          description="Derived Column Expression"
                           name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
                         <property
                           containsID="true"
                           dataType="System.String"
-                          description="Expresión descriptiva de columna derivada"
+                          description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
                       </properties>
@@ -156,135 +156,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de error de columna derivada]"
-                  description="Salida de error de la transformación Columna derivada"
+                  refId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="Salida de error de columna derivada"
-                  synchronousInputId="Package\Tarea Flujo de datos\Columna derivada 1.Inputs[Entrada de columna derivada]">
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Derived Column 1.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      refId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      lineageId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      refId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Tarea Flujo de datos\Comando de OLE DB"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
-              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
-              name="Comando de OLE DB"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProducts] SET [end_date] = ? WHERE [product_id] = ? AND [end_date] IS NULL</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Tarea Flujo de datos\Comando de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="{E48EDEE3-6CF9-4760-8531-D86E47C26211}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.BikeStoresDW]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
-                  errorOrTruncationOperation="Ejecución de comando"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de comando de OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[product_id]"
-                      cachedDataType="i4"
-                      cachedName="product_id"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_id]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[end_date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="end_date"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[end_date]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
-                      dataType="dbTimeStamp"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
-                      dataType="i4"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
-                  exclusionGroup="1"
-                  name="Salida de comando de OLE DB"
-                  synchronousInputId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de comando de OLE DB"
-                  synchronousInputId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -304,7 +192,7 @@
                   dataType="System.String"
                   description="Especifica la instrucción SELECT utilizada para crear un conjunto de filas de esquema."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [brand_id], [category_id], [list_price], [model_year], [product_id], [product_name],[start_date],[end_date] FROM [dbo].[DimProducts]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [brand_id], [brand_name], [category_id], [category_name], [list_price], [model_year], [product_id], [product_name],[start_date],[end_date] FROM [dbo].[DimProducts]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la cláusula WHERE de la instrucción SELECT que selecciona la fila actual de entre filas con claves empresariales idénticas."
@@ -316,7 +204,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Indica si se produce un error de transformación cuando las columnas con atributos fijos contienen cambios."
-                  name="FailOnFixedAttributeChange">true</property>
+                  name="FailOnFixedAttributeChange">false</property>
                 <property
                   dataType="System.String"
                   description="Especifica el nombre de columna para el miembro deducido."
@@ -357,7 +245,7 @@
                       cachedDataType="i4"
                       cachedName="brand_id"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[brand_id]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[brand_id]">
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[brand_id]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -366,16 +254,46 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[brand_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="brand_name"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[brand_name]"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Match Output].Columns[brand_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[category_id]"
                       cachedDataType="i4"
                       cachedName="category_id"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[category_id]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[category_id]">
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[category_id]">
                       <properties>
                         <property
                           dataType="System.Int32"
                           name="ColumnType"
                           typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[category_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="category_name"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[category_name]"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Match Output].Columns[category_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -385,7 +303,7 @@
                       cachedPrecision="10"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[list_price]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[list_price]">
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[list_price]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -398,7 +316,7 @@
                       cachedDataType="i2"
                       cachedName="model_year"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[model_year]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[model_year]">
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[model_year]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -411,7 +329,7 @@
                       cachedDataType="i4"
                       cachedName="product_id"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[product_id]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_id]">
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_id]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -426,7 +344,7 @@
                       cachedLength="255"
                       cachedName="product_name"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[product_name]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_name]">
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_name]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -442,9 +360,21 @@
                       dataType="i4"
                       name="brand_id" />
                     <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[brand_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="brand_name" />
+                    <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[category_id]"
                       dataType="i4"
                       name="category_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[category_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="category_name" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[list_price]"
                       dataType="numeric"
@@ -528,200 +458,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarea Flujo de datos\Insertar destino"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
-              description="Destino de OLE DB"
-              name="Insertar destino"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[DimProducts]</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Tarea Flujo de datos\Insertar destino.Connections[OleDbConnection]"
-                  connectionManagerID="{E48EDEE3-6CF9-4760-8531-D86E47C26211}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.BikeStoresDW]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB]"
-                  errorOrTruncationOperation="Insertar"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de destino de OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[product_id]"
-                      cachedDataType="i4"
-                      cachedName="product_id"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_id]"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_id]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[product_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="product_name"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_name]"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_name]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[brand_id]"
-                      cachedDataType="i4"
-                      cachedName="brand_id"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[brand_id]"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[brand_id]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[category_id]"
-                      cachedDataType="i4"
-                      cachedName="category_id"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[category_id]"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[category_id]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[model_year]"
-                      cachedDataType="i2"
-                      cachedName="model_year"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[model_year]"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[model_year]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[list_price]"
-                      cachedDataType="numeric"
-                      cachedName="list_price"
-                      cachedPrecision="10"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[list_price]"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[list_price]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[start_date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="start_date"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[start_date]"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de columna derivada].Columns[start_date]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_key]"
-                      dataType="i4"
-                      name="product_key" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_id]"
-                      dataType="i4"
-                      name="product_id" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="product_name" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[brand_id]"
-                      dataType="i4"
-                      name="brand_id" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[category_id]"
-                      dataType="i4"
-                      name="category_id" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[model_year]"
-                      dataType="i2"
-                      name="model_year" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[list_price]"
-                      dataType="numeric"
-                      name="list_price"
-                      precision="10"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[start_date]"
-                      dataType="dbTimeStamp"
-                      name="start_date" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[end_date]"
-                      dataType="dbTimeStamp"
-                      name="end_date" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Tarea Flujo de datos\Insertar destino.Outputs[Salida de error de destino de OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Tarea Flujo de datos\Origen de OLE DB"
+              refId="Package\Tarea Flujo de datos\Extraer Datos"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
               description="Origen de OLE DB"
-              name="Origen de OLE DB"
+              name="Extraer Datos"
               usesDispositions="true"
               version="7">
               <properties>
@@ -766,7 +507,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tarea Flujo de datos\Origen de OLE DB.Connections[OleDbConnection]"
+                  refId="Package\Tarea Flujo de datos\Extraer Datos.Connections[OleDbConnection]"
                   connectionManagerID="{C3CEA803-4B63-47EB-94D9-049CEFF830B8}:external"
                   connectionManagerRefId="Project.ConnectionManagers[localhost.BikeStoresStage]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -774,63 +515,63 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB]"
                   name="Salida de origen de OLE DB">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_id]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[product_id]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_id]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_id]"
                       name="product_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_name]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[product_name]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[product_name]"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_name]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_name]"
                       name="product_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[brand_id]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[brand_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[brand_id]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[brand_id]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[brand_id]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[brand_id]"
                       name="brand_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[category_id]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[category_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[category_id]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[category_id]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[category_id]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[category_id]"
                       name="category_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[model_year]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[model_year]"
                       dataType="i2"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[model_year]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[model_year]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[model_year]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[model_year]"
                       name="model_year"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[list_price]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[list_price]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[list_price]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[list_price]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[list_price]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[list_price]"
                       name="list_price"
                       precision="10"
                       scale="2"
@@ -839,29 +580,29 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[product_id]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[product_id]"
                       dataType="i4"
                       name="product_id" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[product_name]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[product_name]"
                       codePage="1252"
                       dataType="str"
                       length="255"
                       name="product_name" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[brand_id]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[brand_id]"
                       dataType="i4"
                       name="brand_id" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[category_id]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[category_id]"
                       dataType="i4"
                       name="category_id" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[model_year]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[model_year]"
                       dataType="i2"
                       name="model_year" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[list_price]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].ExternalColumns[list_price]"
                       dataType="numeric"
                       name="list_price"
                       precision="10"
@@ -869,54 +610,54 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB]"
                   isErrorOut="true"
                   name="Salida de error de origen de OLE DB">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[product_id]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[product_id]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[product_id]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[product_id]"
                       name="product_id" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[product_name]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[product_name]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[product_name]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[product_name]"
                       name="product_name" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[brand_id]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[brand_id]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[brand_id]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[brand_id]"
                       name="brand_id" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[category_id]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[category_id]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[category_id]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[category_id]"
                       name="category_id" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[model_year]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[model_year]"
                       dataType="i2"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[model_year]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[model_year]"
                       name="model_year" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[list_price]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[list_price]"
                       dataType="numeric"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[list_price]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[list_price]"
                       name="list_price"
                       precision="10"
                       scale="2" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -925,239 +666,1107 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarea Flujo de datos\Unión de todo"
-              componentClassID="Microsoft.UnionAll"
-              contactInfo="Unión de todo;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
-              description="Combina las filas de varios flujos de datos sin ordenarlos. Por ejemplo, devuelve filas a un flujo de datos después de corregir los errores. Si el orden es importante, se recomienda usar la transformación Mezclar."
-              name="Unión de todo"
-              version="1">
+              refId="Package\Tarea Flujo de datos\Insertar destino"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insertar destino"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimProducts]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Insertar destino.Connections[OleDbConnection]"
+                  connectionManagerID="{E48EDEE3-6CF9-4760-8531-D86E47C26211}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.BikeStoresDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
               <inputs>
                 <input
-                  refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 1]"
-                  name="Entrada de Unión de todo 1">
+                  refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[product_id]"
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].Columns[product_id]"
                       cachedDataType="i4"
                       cachedName="product_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_id]}</property>
-                      </properties>
-                    </inputColumn>
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_id]" />
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[product_name]"
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].Columns[product_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="product_name"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_name]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_name]}</property>
-                      </properties>
-                    </inputColumn>
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[product_name]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_name]" />
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[brand_id]"
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].Columns[brand_id]"
                       cachedDataType="i4"
                       cachedName="brand_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[brand_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[brand_id]}</property>
-                      </properties>
-                    </inputColumn>
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[brand_id]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_id]" />
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[category_id]"
-                      cachedDataType="i4"
-                      cachedName="category_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[category_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[category_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[model_year]"
-                      cachedDataType="i2"
-                      cachedName="model_year"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[model_year]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[model_year]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[list_price]"
-                      cachedDataType="numeric"
-                      cachedName="list_price"
-                      cachedPrecision="10"
-                      cachedScale="2"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[list_price]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[list_price]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2]"
-                  hasSideEffects="true"
-                  name="Entrada de Unión de todo 2">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[product_id]"
-                      cachedDataType="i4"
-                      cachedName="product_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[product_name]"
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].Columns[brand_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="product_name"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_name]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_name]}</property>
-                      </properties>
-                    </inputColumn>
+                      cachedName="brand_name"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[brand_name]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_name]" />
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[brand_id]"
-                      cachedDataType="i4"
-                      cachedName="brand_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[brand_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[brand_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[category_id]"
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].Columns[category_id]"
                       cachedDataType="i4"
                       cachedName="category_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[category_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[category_id]}</property>
-                      </properties>
-                    </inputColumn>
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_id]" />
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[model_year]"
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].Columns[category_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="category_name"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[category_name]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_name]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].Columns[model_year]"
                       cachedDataType="i2"
                       cachedName="model_year"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[model_year]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[model_year]}</property>
-                      </properties>
-                    </inputColumn>
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[model_year]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[model_year]" />
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[list_price]"
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].Columns[list_price]"
                       cachedDataType="numeric"
                       cachedName="list_price"
                       cachedPrecision="10"
                       cachedScale="2"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[list_price]">
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[list_price]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[list_price]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].Columns[start_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="start_date"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
+                      lineageId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Output].Columns[start_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[product_key]"
+                      dataType="i4"
+                      name="product_key" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[product_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="product_name" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[brand_id]"
+                      dataType="i4"
+                      name="brand_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[brand_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="brand_name" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
+                      dataType="i4"
+                      name="category_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[category_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="category_name" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[model_year]"
+                      dataType="i2"
+                      name="model_year" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[list_price]"
+                      dataType="numeric"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input].ExternalColumns[end_date]"
+                      dataType="dbTimeStamp"
+                      name="end_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Insertar destino.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Insertar destino.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Lookup Brands"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Brands"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT brand_id,
+       brand_name
+FROM   production.brands;</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT brand_id,
+       brand_name
+FROM   production.brands;) [refTable]
+where [refTable].[brand_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="brand_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="brand_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[brand_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Lookup Brands.Connections[OleDbConnection]"
+                  connectionManagerID="{C3CEA803-4B63-47EB-94D9-049CEFF830B8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.BikeStoresStage]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Lookup Brands.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Lookup Brands.Inputs[Lookup Input].Columns[brand_id]"
+                      cachedDataType="i4"
+                      cachedName="brand_id"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[brand_id]">
                       <properties>
                         <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Id. de linaje de columna de salida"
-                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[list_price]}</property>
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">brand_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
                       </properties>
                     </inputColumn>
                   </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 3]"
-                  dangling="true"
-                  hasSideEffects="true"
-                  name="Entrada de Unión de todo 3">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1]"
-                  name="Salida de Unión de todo 1">
+                  refId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Lookup Brands.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_id]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_id]"
-                      name="product_id" />
+                      refId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Match Output].Columns[brand_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Match Output].Columns[brand_name]"
+                      name="brand_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">brand_name</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Lookup Brands.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Lookup Brands.Inputs[Lookup Input]">
+                  <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_name]"
+                      refId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Lookup Categories"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Categories"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT category_id,
+       category_name
+FROM   production.categories;</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT category_id,
+       category_name
+FROM   production.categories;) [refTable]
+where [refTable].[category_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="category_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="category_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[category_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Lookup Categories.Connections[OleDbConnection]"
+                  connectionManagerID="{C3CEA803-4B63-47EB-94D9-049CEFF830B8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.BikeStoresStage]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Lookup Categories.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Lookup Categories.Inputs[Lookup Input].Columns[category_id]"
+                      cachedDataType="i4"
+                      cachedName="category_id"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[category_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">category_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Lookup Categories.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Match Output].Columns[category_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Match Output].Columns[category_name]"
+                      name="category_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">category_name</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Lookup Categories.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\Lookup Categories.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProducts] SET [end_date] = ? WHERE [product_id] = ? AND [end_date] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{E48EDEE3-6CF9-4760-8531-D86E47C26211}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.BikeStoresDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input].Columns[end_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="end_date"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Output].Columns[end_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProducts] SET [brand_name] = ?,[category_name] = ? WHERE [product_id] = ? AND [end_date] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="{E48EDEE3-6CF9-4760-8531-D86E47C26211}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.BikeStoresDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[brand_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="brand_name"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Match Output].Columns[brand_name]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[category_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="category_name"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Match Output].Columns[category_name]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[product_name]"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1].Columns[product_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="product_name"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1].Columns[brand_id]"
+                      cachedDataType="i4"
+                      cachedName="brand_id"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[brand_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1].Columns[category_id]"
+                      cachedDataType="i4"
+                      cachedName="category_id"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[category_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1].Columns[model_year]"
+                      cachedDataType="i2"
+                      cachedName="model_year"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[model_year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[model_year]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1].Columns[list_price]"
+                      cachedDataType="numeric"
+                      cachedName="list_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[list_price]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[list_price]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1].Columns[brand_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="brand_name"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Match Output].Columns[brand_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1].Columns[category_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="category_name"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Match Output].Columns[category_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_name]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2].Columns[product_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="product_name"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2].Columns[brand_id]"
+                      cachedDataType="i4"
+                      cachedName="brand_id"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[brand_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2].Columns[category_id]"
+                      cachedDataType="i4"
+                      cachedName="category_id"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[category_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2].Columns[model_year]"
+                      cachedDataType="i2"
+                      cachedName="model_year"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[model_year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[model_year]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2].Columns[list_price]"
+                      cachedDataType="numeric"
+                      cachedName="list_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[list_price]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[list_price]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2].Columns[brand_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="brand_name"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Match Output].Columns[brand_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2].Columns[category_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="category_name"
+                      lineageId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Match Output].Columns[category_name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_name]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[product_name]"
                       name="product_name" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[brand_id]"
+                      refId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_id]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[brand_id]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_id]"
                       name="brand_id" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[category_id]"
+                      refId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_id]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[category_id]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_id]"
                       name="category_id" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[model_year]"
+                      refId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[model_year]"
                       dataType="i2"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[model_year]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[model_year]"
                       name="model_year" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[list_price]"
+                      refId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[list_price]"
                       dataType="numeric"
-                      lineageId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[list_price]"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[list_price]"
                       name="list_price"
                       precision="10"
                       scale="2" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[brand_name]"
+                      name="brand_name" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1].Columns[category_name]"
+                      name="category_name" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1166,40 +1775,55 @@
           </components>
           <paths>
             <path
+              refId="Package\Tarea Flujo de datos.Paths[Derived Column Output]"
+              endId="Package\Tarea Flujo de datos\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Tarea Flujo de datos\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Derived Column Output1]"
+              endId="Package\Tarea Flujo de datos\Insertar destino.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Tarea Flujo de datos\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Lookup Match Output]"
+              endId="Package\Tarea Flujo de datos\Lookup Categories.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Tarea Flujo de datos\Lookup Brands.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Lookup Match Output1]"
+              endId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+              name="Lookup Match Output"
+              startId="Package\Tarea Flujo de datos\Lookup Categories.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\Tarea Flujo de datos.Paths[Nueva salida]"
-              endId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 1]"
+              endId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 1]"
               name="Nueva salida"
               startId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Outputs[Nueva salida]" />
             <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de columna derivada]"
-              endId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
-              name="Salida de columna derivada"
-              startId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada]" />
+              refId="Package\Tarea Flujo de datos.Paths[OLE DB Command Output]"
+              endId="Package\Tarea Flujo de datos\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\Tarea Flujo de datos\OLE DB Command.Outputs[OLE DB Command Output]" />
             <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de columna derivada1]"
-              endId="Package\Tarea Flujo de datos\Insertar destino.Inputs[Entrada de destino de OLE DB]"
-              name="Salida de columna derivada"
-              startId="Package\Tarea Flujo de datos\Columna derivada 1.Outputs[Salida de columna derivada]" />
-            <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de comando de OLE DB]"
-              endId="Package\Tarea Flujo de datos\Unión de todo.Inputs[Entrada de Unión de todo 2]"
-              name="Salida de comando de OLE DB"
-              startId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de comando de OLE DB]" />
+              refId="Package\Tarea Flujo de datos.Paths[Salida de actualizaciones de atributos variables]"
+              endId="Package\Tarea Flujo de datos\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Salida de actualizaciones de atributos variables"
+              startId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Outputs[Salida de actualizaciones de atributos variables]" />
             <path
               refId="Package\Tarea Flujo de datos.Paths[Salida de inserciones de atributos históricos]"
-              endId="Package\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]"
+              endId="Package\Tarea Flujo de datos\Derived Column.Inputs[Derived Column Input]"
               name="Salida de inserciones de atributos históricos"
               startId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Outputs[Salida de inserciones de atributos históricos]" />
             <path
               refId="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
-              endId="Package\Tarea Flujo de datos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+              endId="Package\Tarea Flujo de datos\Lookup Brands.Inputs[Lookup Input]"
               name="Salida de origen de OLE DB"
-              startId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+              startId="Package\Tarea Flujo de datos\Extraer Datos.Outputs[Salida de origen de OLE DB]" />
             <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de Unión de todo 1]"
-              endId="Package\Tarea Flujo de datos\Columna derivada 1.Inputs[Entrada de columna derivada]"
-              name="Salida de Unión de todo 1"
-              startId="Package\Tarea Flujo de datos\Unión de todo.Outputs[Salida de Unión de todo 1]" />
+              refId="Package\Tarea Flujo de datos.Paths[Union All Output 1]"
+              endId="Package\Tarea Flujo de datos\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Tarea Flujo de datos\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1228,18 +1852,26 @@
     design-time-name="Package\Tarea Flujo de datos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164,42"
-          Id="Package\Tarea Flujo de datos\Origen de OLE DB"
-          TopLeft="162,5.5" />
+          Size="143,42"
+          Id="Package\Tarea Flujo de datos\Extraer Datos"
+          TopLeft="161,5.5" />
         <NodeLayout
           Size="215,42"
           Id="Package\Tarea Flujo de datos\Dimensión de variación lenta"
-          TopLeft="136.5,107.5" />
+          TopLeft="125,311.5" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Tarea Flujo de datos\Lookup Brands"
+          TopLeft="158,107.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Tarea Flujo de datos\Lookup Categories"
+          TopLeft="149.5,209.5" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
-          TopLeft="244,47.5">
+          TopLeft="232.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1259,53 +1891,101 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Lookup Match Output]"
+          TopLeft="232.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Lookup Match Output1]"
+          TopLeft="232.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
-          Size="164,42"
-          Id="Package\Tarea Flujo de datos\Columna derivada"
-          TopLeft="19,209.5" />
+          Size="154,42"
+          Id="Package\Tarea Flujo de datos\Derived Column"
+          TopLeft="17.5000000000001,413.5" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de inserciones de atributos históricos]"
-          TopLeft="209.5,149.5">
+          TopLeft="180.75,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-108.5,60"
+              EndConnector="-86.25,60"
               Start="0,0"
-              End="-108.5,52.5">
+              End="-86.25,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.2659279778393" />
+                    End="0,16.490045941807" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.2659279778393"
-                    Point2="0,24.2659279778393"
-                    Point3="-4,24.2659279778393" />
+                    Point1="0,16.490045941807"
+                    Point2="0,20.490045941807"
+                    Point3="-4,20.490045941807" />
                   <mssgle:LineSegment
-                    End="-104.5,24.2659279778393" />
+                    End="-82.25,20.490045941807" />
                   <mssgle:CubicBezierSegment
-                    Point1="-104.5,24.2659279778393"
-                    Point2="-108.5,24.2659279778393"
-                    Point3="-108.5,28.2659279778393" />
+                    Point1="-82.25,20.490045941807"
+                    Point2="-86.25,20.490045941807"
+                    Point3="-86.25,24.490045941807" />
                   <mssgle:LineSegment
-                    End="-108.5,52.5" />
+                    End="-86.25,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-151.2382421875,29.2659279778393,193.976484375,10.3349609375"
+              BoundingBox="-140.1132421875,25.490045941807,193.976484375,10.3349609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="177,42"
-          Id="Package\Tarea Flujo de datos\Comando de OLE DB"
-          TopLeft="5.50000000000003,311.5" />
+          Size="166,42"
+          Id="Package\Tarea Flujo de datos\OLE DB Command"
+          TopLeft="5.50000000000006,515.5" />
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de columna derivada]"
-          TopLeft="97.5,251.5">
+          Id="Package\Tarea Flujo de datos.Paths[Derived Column Output]"
+          TopLeft="91.5000000000001,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1326,71 +2006,71 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="145,42"
-          Id="Package\Tarea Flujo de datos\Unión de todo"
-          TopLeft="171.5,413.5" />
+          Size="121,42"
+          Id="Package\Tarea Flujo de datos\Union All"
+          TopLeft="172,617.5" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Nueva salida]"
-          TopLeft="278.5,149.5">
+          TopLeft="232.5,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11.6666666666666,264"
+              EndConnector="18.8333333333334,264"
               Start="0,0"
-              End="-11.6666666666666,256.5">
+              End="18.8333333333334,256.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,127.420598839944" />
+                    End="0,152.332789559543" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,127.420598839944"
-                    Point2="0,131.420598839944"
-                    Point3="-4,131.420598839944" />
+                    Point1="0,152.332789559543"
+                    Point2="0,156.332789559543"
+                    Point3="4,156.332789559543" />
                   <mssgle:LineSegment
-                    End="-7.66666666666663,131.420598839944" />
+                    End="14.8333333333334,156.332789559543" />
                   <mssgle:CubicBezierSegment
-                    Point1="-7.66666666666663,131.420598839944"
-                    Point2="-11.6666666666666,131.420598839944"
-                    Point3="-11.6666666666666,135.420598839944" />
+                    Point1="14.8333333333334,156.332789559543"
+                    Point2="18.8333333333334,156.332789559543"
+                    Point3="18.8333333333334,160.332789559543" />
                   <mssgle:LineSegment
-                    End="-11.6666666666666,256.5" />
+                    End="18.8333333333334,256.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.1216927083333,136.420598839944,56.57671875,9.7490234375"
+              BoundingBox="-18.8716927083333,161.332789559543,56.57671875,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de comando de OLE DB]"
-          TopLeft="94,353.5">
+          Id="Package\Tarea Flujo de datos.Paths[OLE DB Command Output]"
+          TopLeft="88.5000000000001,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="127.166666666667,60"
+              EndConnector="125.166666666667,60"
               Start="0,0"
-              End="127.166666666667,52.5">
+              End="125.166666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.6070941336971" />
+                    End="0,31.5301794453507" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.6070941336971"
-                    Point2="0,35.6070941336971"
-                    Point3="4,35.6070941336971" />
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
                   <mssgle:LineSegment
-                    End="123.166666666667,35.6070941336971" />
+                    End="121.166666666667,35.5301794453507" />
                   <mssgle:CubicBezierSegment
-                    Point1="123.166666666667,35.6070941336971"
-                    Point2="127.166666666667,35.6070941336971"
-                    Point3="127.166666666667,39.6070941336971" />
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
                   <mssgle:LineSegment
-                    End="127.166666666667,52.5" />
+                    End="125.166666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1400,12 +2080,12 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="173,42"
-          Id="Package\Tarea Flujo de datos\Columna derivada 1"
-          TopLeft="157.5,515.5" />
+          Size="163,42"
+          Id="Package\Tarea Flujo de datos\Derived Column 1"
+          TopLeft="151,719.5" />
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de Unión de todo 1]"
-          TopLeft="244,455.5">
+          Id="Package\Tarea Flujo de datos.Paths[Union All Output 1]"
+          TopLeft="232.5,659.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1428,10 +2108,10 @@
         <NodeLayout
           Size="153,42"
           Id="Package\Tarea Flujo de datos\Insertar destino"
-          TopLeft="167.5,617.5" />
+          TopLeft="156,821.5" />
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de columna derivada1]"
-          TopLeft="244,557.5">
+          Id="Package\Tarea Flujo de datos.Paths[Derived Column Output1]"
+          TopLeft="232.5,761.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1451,11 +2131,51 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Tarea Flujo de datos\OLE DB Command 1"
+          TopLeft="294,413.5" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de actualizaciones de atributos variables]"
+          TopLeft="284.25,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97.25,60"
+              Start="0,0"
+              End="97.25,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.490045941807" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.490045941807"
+                    Point2="0,20.490045941807"
+                    Point3="4,20.490045941807" />
+                  <mssgle:LineSegment
+                    End="93.25,20.490045941807" />
+                  <mssgle:CubicBezierSegment
+                    Point1="93.25,20.490045941807"
+                    Point2="97.25,20.490045941807"
+                    Point3="97.25,24.490045941807" />
+                  <mssgle:LineSegment
+                    End="97.25,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.6282421875,25.490045941807,208.506484375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen de OLE DB">
+    design-time-name="Package\Tarea Flujo de datos\Extraer Datos">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1479,50 +2199,63 @@
   &lt;TableName&gt;[dbo].[DimProducts]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[brand_id]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[brand_id]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;brand_id&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[category_id]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Lookup Brands.Outputs[Lookup Match Output].Columns[brand_name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;brand_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[category_id]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;category_id&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[list_price]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Lookup Categories.Outputs[Lookup Match Output].Columns[category_name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;category_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[list_price]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;list_price&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[model_year]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[model_year]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;model_year&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[product_id]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_id]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;product_id&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[product_name]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Extraer Datos.Outputs[Salida de origen de OLE DB].Columns[product_name]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;product_name&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Columna derivada&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Comando de OLE DB&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Unión de todo&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Columna derivada 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
     &lt;anyType xsi:type="xsd:string"&gt;Insertar destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
   &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
   &lt;CurrentIndicatorColumn /&gt;
@@ -1534,6 +2267,52 @@
   &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Lookup Brands">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Lookup Categories">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

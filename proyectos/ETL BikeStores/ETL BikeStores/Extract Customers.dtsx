@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{28AF110A-A6EA-46DB-A901-A43EF485C742}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{3265F799-E92E-4C8C-974E-4DD24DC2CF82}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -600,13 +600,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Tarea Flujo de datos\Copiar Datos"
-          TopLeft="374,240" />
-        <NodeLayout
           Size="143,42"
           Id="Package\Tarea Flujo de datos\Extraer Datos"
           TopLeft="371,95" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Tarea Flujo de datos\Copiar Datos"
+          TopLeft="374,240" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
           TopLeft="443,137">
